@@ -52,7 +52,7 @@ int restorecon_main(int argc, char **argv)
         usage();
 
     for (i = 0; i < argc; i++) {
-        rc = selinux_android_restorecon(argv[i], flags);
+        rc = selinux_android_restorecon_flags(argv[i], flags);
         if (rc < 0)
             fprintf(stderr, "Could not restorecon %s:  %s\n", argv[i],
                     strerror(errno));

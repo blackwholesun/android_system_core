@@ -501,10 +501,10 @@ int make_dir(const char *path, mode_t mode)
 
 int restorecon(const char* pathname)
 {
-    return selinux_android_restorecon(pathname, 0);
+    return selinux_android_restorecon(pathname);
 }
 
 int restorecon_recursive(const char* pathname)
 {
-    return selinux_android_restorecon(pathname, SELINUX_ANDROID_RESTORECON_RECURSE);
+    return selinux_android_restorecon_recursive(pathname);
 }
